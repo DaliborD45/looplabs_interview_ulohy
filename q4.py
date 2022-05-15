@@ -1,15 +1,14 @@
 def resolve_cycle(index, starting_point, arr):
 
     checked_indexes = [index]
-    checked_ciselka = [starting_point]
+    checked_numbers = [starting_point]
     is_found = False
     while not is_found and len(checked_indexes) <= len(arr):
-        move_index = checked_ciselka[-1]
-        ciselko = arr[move_index]
-        checked_ciselka.append(ciselko)
-
+        move_index = checked_numbers[-1]
+        number = arr[move_index]
+        checked_numbers.append(number)
         checked_indexes.append(move_index)
-        if ciselko == -1:
+        if number == -1:
             break
         if move_index == index:
             is_found = True
